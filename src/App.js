@@ -10,6 +10,10 @@ const monsterReducer = combineReducers({
   car: reducers.carReducer,
 });
 
+const store = createStore(
+  monsterReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 const App = () => {
   const state = {
