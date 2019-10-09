@@ -5,6 +5,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 import * as reducers from './state/reducers';
+import { dispatch } from '../../../../../../AppData/Local/Microsoft/TypeScript/3.5/node_modules/rxjs/internal/observable/pairs';
 
 const monsterReducer = combineReducers({
   car: reducers.carReducer,
@@ -39,6 +40,9 @@ const App = () => {
 
   const buyItem = item => {
     // dipsatch an action here to add an item
+    dispatch({
+      
+    })
   };
 
   return (
