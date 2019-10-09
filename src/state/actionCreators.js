@@ -6,3 +6,10 @@ export function add(item) {
         payload: {feature: item}
     };
 }
+
+export function remove(item) {
+    return {
+        type: types.REMOVE,
+        payload: {xxx: item}
+    }
+}

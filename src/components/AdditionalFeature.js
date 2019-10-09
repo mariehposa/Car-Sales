@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as types from "../state/actionCreators";
 
 export const AdditionalFeature = props => {
-  console.log(props);
+  // console.log(props);
   
   return (
     <li>

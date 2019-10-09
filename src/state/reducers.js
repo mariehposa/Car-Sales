@@ -11,12 +11,27 @@ const initialValue = {
 export function carReducer(car = initialValue, action) {
     switch(action.type) {
         case types.ADD: {
-            console.log(action.payload);
-            
+            // const newFeatures = car.features.concat(action.payload.feature)
+            //console.log(action.payload);
             return {
-                ...car,
-                features: [...car.features, action.payload.feature]
+                ...car, 
+                price: car.price + action.payload.feature.price,
+                features: [...car.features, action.payload.feature],
             };
+        }
+        case types.REMOVE: {
+            // console.log(action.payload);
+            const featureThatWasClickedOn = action.payload.xxx;
+            console.log(featureThatWasClickedOn);
+            const remainingFeatures = car.features.filter(carFeature => carFeature.id !== featureThatWasClickedOn.id)
+            return { 
+                // name: car.name,
+                // image: car.image,
+                // price: car.price,
+                ...car,
+                price: car.price - featureThatWasClickedOn.price,
+                features: remainingFeatures
+             }
         }
         default:
             return car;

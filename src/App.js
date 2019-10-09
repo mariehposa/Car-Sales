@@ -37,6 +37,7 @@ const App = () => {
 
   const removeFeature = item => {
     // dispatch an action here to remove an item
+
   };
 
   const buyItem = item => {
@@ -51,7 +52,7 @@ const App = () => {
     <Provider store={store}>
       <div className="boxes">
         <div className="box">
-          <Header car={state.car} />
+          <Header />
           <AddedFeatures car={state.car} />
         </div>
         <div className="box">
