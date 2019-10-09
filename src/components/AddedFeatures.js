@@ -23,4 +23,4 @@ export const AddedFeatures = props => {
 export default connect(
   state => state,
   actionCreators,
-)(AddedFeature);
+)(AddedFeatures);

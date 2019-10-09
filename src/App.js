@@ -5,7 +5,8 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 import * as reducers from './state/reducers';
-import { dispatch } from '../../../../../../AppData/Local/Microsoft/TypeScript/3.5/node_modules/rxjs/internal/observable/pairs';
+import { ADD } from './state/actionTypes';
+import { Provider } from "react-redux";
 
 const monsterReducer = combineReducers({
   car: reducers.carReducer,
@@ -40,8 +41,9 @@ const App = () => {
 
   const buyItem = item => {
     // dipsatch an action here to add an item
-    dispatch({
-      
+    return({
+      type: ADD,
+      payload: {feature: item}
     })
   };
 
@@ -53,7 +55,7 @@ const App = () => {
           <AddedFeatures car={state.car} />
         </div>
         <div className="box">
-          <AdditionalFeatures store={state.store} />
+          <AdditionalFeatures store={state.store} addItem={buyItem}/>
           <Total car={state.car} additionalPrice={state.additionalPrice} />
         </div>
         </div>
