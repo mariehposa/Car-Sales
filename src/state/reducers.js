@@ -22,7 +22,7 @@ export function carReducer(car = initialValue, action) {
         case types.REMOVE: {
             // console.log(action.payload);
             const featureThatWasClickedOn = action.payload.xxx;
-            console.log(featureThatWasClickedOn);
+            //console.log(featureThatWasClickedOn);
             const remainingFeatures = car.features.filter(carFeature => carFeature.id !== featureThatWasClickedOn.id)
             return { 
                 // name: car.name,
