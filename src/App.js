@@ -1,9 +1,15 @@
 import React from 'react';
-
+import{ combineReducers, createStore } from 'redux';
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
+import * as reducers from './state/reducers';
+
+const monsterReducer = combineReducers({
+  car: reducers.carReducer,
+});
+
 
 const App = () => {
   const state = {
